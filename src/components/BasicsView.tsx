@@ -2,7 +2,7 @@ import { useState } from "react";
 import { motion, AnimatePresence } from "motion/react";
 import Markdown from "react-markdown";
 import remarkGfm from "remark-gfm";
-import { ArrowLeft, BookOpen, Brain, Sparkles, Code, Lightbulb, Image, Globe, Bot } from "lucide-react";
+import { ArrowLeft, BookOpen, Brain, Sparkles, Code, Lightbulb, Image, Globe, Bot, Wand2 } from "lucide-react";
 import { BASICS_CONTENT } from "../data/basicsContent";
 import { Mermaid } from "./Mermaid";
 
@@ -55,6 +55,13 @@ const TOPICS = [
     description: "从大脑到数字员工：解析 Agent 的四大组件与 ReAct 运行机制。",
     icon: Bot,
     color: "bg-emerald-50 text-emerald-600",
+  },
+  {
+    id: "llm-creativity",
+    title: "成语接龙 vs 创造性",
+    description: "探讨如何让大模型打破“成语接龙”的局限，具备真正的创造性。",
+    icon: Wand2,
+    color: "bg-violet-50 text-violet-600",
   },
 ];
 

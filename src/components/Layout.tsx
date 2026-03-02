@@ -7,7 +7,7 @@ export function cn(...inputs: ClassValue[]) {
   return twMerge(clsx(inputs));
 }
 
-type Tab = "basics" | "trending" | "trends" | "dev-practices" | "classics";
+type Tab = "basics" | "trending" | "classics";
 
 interface LayoutProps {
   activeTab: Tab;
@@ -19,8 +19,6 @@ export function Layout({ activeTab, onTabChange, children }: LayoutProps) {
   const tabs = [
     { id: "basics", label: "基础学习", icon: BookOpen },
     { id: "trending", label: "热门资讯", icon: Flame },
-    { id: "trends", label: "未来趋势", icon: LineChart },
-    { id: "dev-practices", label: "开发实践", icon: Code2 },
     { id: "classics", label: "经典原文", icon: Library },
   ] as const;
 
