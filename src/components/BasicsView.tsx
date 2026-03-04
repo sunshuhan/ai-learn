@@ -2,7 +2,7 @@ import { useState } from "react";
 import { motion, AnimatePresence } from "motion/react";
 import Markdown from "react-markdown";
 import remarkGfm from "remark-gfm";
-import { ArrowLeft, BookOpen, Brain, Sparkles, Code, Lightbulb, Image, Globe, Bot, Wand2 } from "lucide-react";
+import { ArrowLeft, BookOpen, Brain, Sparkles, Code, Lightbulb, Image, Globe, Bot, Wand2, Database } from "lucide-react";
 import { BASICS_CONTENT } from "../data/basicsContent";
 import { Mermaid } from "./Mermaid";
 
@@ -55,6 +55,13 @@ const TOPICS = [
     description: "从大脑到数字员工：解析 Agent 的四大组件与 ReAct 运行机制。",
     icon: Bot,
     color: "bg-emerald-50 text-emerald-600",
+  },
+  {
+    id: "vector-db",
+    title: "向量数据库",
+    description: "AI 的长期记忆：解析嵌入模型、相似性检索与 RAG 架构。",
+    icon: Database,
+    color: "bg-blue-50 text-blue-600",
   },
   {
     id: "llm-creativity",
@@ -130,7 +137,7 @@ export function BasicsView() {
                   code({node, inline, className, children, ...props}: any) {
                     const match = /language-(\w+)/.exec(className || '');
                     if (!inline && match && match[1] === 'mermaid') {
-                      return <Mermaid chart={String(children).replace(/\\n$/, '')} />;
+                      return <Mermaid chart={String(children).replace(/\n$/, '')} />;
                     }
                     return <code className={className} {...props}>{children}</code>;
                   }
