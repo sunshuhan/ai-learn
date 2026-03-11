@@ -17,7 +17,7 @@ const TOPICS = [
   {
     id: "ml-basics",
     title: "机器学习基础",
-    description: "了解什么是机器学习、监督学习与无监督学习的核心概念。",
+    description: "深入拆解监督学习、无监督学习与强化学习三大范式及其与 LLM 的进化关系。",
     icon: BookOpen,
     color: "bg-blue-50 text-blue-600",
   },
