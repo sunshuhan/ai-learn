@@ -65,20 +65,22 @@ export function ClassicsView() {
         ) : (
           <motion.div
             key="article"
-            initial={{ opacity: 0, x: 20 }}
-            animate={{ opacity: 1, x: 0 }}
-            exit={{ opacity: 0, x: -20 }}
-            className="bg-white rounded-2xl border border-zinc-200 shadow-sm p-5 md:p-12"
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            exit={{ opacity: 0 }}
+            className="bg-white rounded-2xl border border-zinc-200 shadow-sm"
           >
-            <button
-              onClick={() => setActiveTopic(null)}
-              className="flex items-center text-sm font-medium text-zinc-500 hover:text-zinc-900 mb-8 transition-colors"
-            >
-              <ArrowLeft className="w-4 h-4 mr-2" />
-              返回文献列表
-            </button>
+            <div className="sticky top-0 z-20 bg-white/90 backdrop-blur-sm pt-4 pb-4 px-5 md:px-12 border-b border-zinc-100 rounded-t-2xl">
+              <button
+                onClick={() => setActiveTopic(null)}
+                className="flex items-center text-sm font-medium text-zinc-500 hover:text-zinc-900 transition-colors"
+              >
+                <ArrowLeft className="w-4 h-4 mr-2" />
+                返回文献列表
+              </button>
+            </div>
 
-            <div className="markdown-body max-w-none">
+            <div className="p-5 md:p-12 pt-6 md:pt-12 markdown-body max-w-none">
               <Markdown remarkPlugins={[remarkGfm]} rehypePlugins={[rehypeRaw]}>
                 {activeContent?.content || ""}
               </Markdown>

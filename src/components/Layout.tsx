@@ -78,9 +78,9 @@ export function Layout({ activeTab, onTabChange, children }: LayoutProps) {
       <main className="flex-1 flex flex-col min-h-0 overflow-hidden relative bg-zinc-50">
         <div 
           ref={scrollRef}
-          className="flex-1 overflow-y-auto p-4 md:p-8 pb-32 md:pb-8 scroll-smooth"
+          className="flex-1 overflow-y-auto pb-32 md:pb-8 scroll-smooth"
         >
-          <div className="max-w-4xl mx-auto w-full">
+          <div className="max-w-4xl mx-auto w-full p-4 md:p-8">
             {children}
           </div>
         </div>
