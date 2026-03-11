@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "motion/react";
 import Markdown from "react-markdown";
 import remarkGfm from "remark-gfm";
@@ -8,6 +8,13 @@ import { CLASSICS_CONTENT } from "../data/classicsContent";
 
 export function ClassicsView() {
   const [activeTopic, setActiveTopic] = useState<string | null>(null);
+
+  useEffect(() => {
+    const mainContent = document.querySelector('main > div');
+    if (mainContent) {
+      mainContent.scrollTop = 0;
+    }
+  }, [activeTopic]);
 
   const activeContent = activeTopic ? CLASSICS_CONTENT.find(c => c.id === activeTopic) : null;
 

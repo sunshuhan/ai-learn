@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "motion/react";
 import Markdown from "react-markdown";
 import remarkGfm from "remark-gfm";
@@ -74,6 +74,13 @@ const TOPICS = [
 
 export function BasicsView() {
   const [activeTopic, setActiveTopic] = useState<string | null>(null);
+
+  useEffect(() => {
+    const mainContent = document.querySelector('main > div');
+    if (mainContent) {
+      mainContent.scrollTop = 0;
+    }
+  }, [activeTopic]);
 
   return (
     <div className="w-full">
