@@ -2,11 +2,18 @@ import { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "motion/react";
 import Markdown from "react-markdown";
 import remarkGfm from "remark-gfm";
-import { ArrowLeft, BookOpen, Brain, Sparkles, Code, Lightbulb, Image, Globe, Bot, Wand2, Database } from "lucide-react";
+import { ArrowLeft, BookOpen, Brain, Sparkles, Code, Lightbulb, Image, Globe, Bot, Wand2, Database, TrendingUp, Settings2, Smartphone, Baby } from "lucide-react";
 import { BASICS_CONTENT } from "../data/basicsContent";
 import { Mermaid } from "./Mermaid";
 
 const TOPICS = [
+  {
+    id: "ai-for-kids",
+    title: "🤖 AI 小课堂 (5岁+)",
+    description: "用最简单的语言和有趣的比喻，带小朋友认识 AI 和智能体。",
+    icon: Baby,
+    color: "bg-pink-50 text-pink-600",
+  },
   {
     id: "understanding-ai",
     title: "对 AI 的理解",
@@ -69,6 +76,27 @@ const TOPICS = [
     description: "探讨如何让大模型打破“成语接龙”的局限，具备真正的创造性。",
     icon: Wand2,
     color: "bg-violet-50 text-violet-600",
+  },
+  {
+    id: "scaling-laws",
+    title: "规模法则 (Scaling Laws)",
+    description: "为什么 AI 越来越大？揭秘计算量、数据量与模型性能的幂律关系。",
+    icon: TrendingUp,
+    color: "bg-orange-50 text-orange-600",
+  },
+  {
+    id: "peft-lora",
+    title: "PEFT 与 LoRA",
+    description: "如何高效地“调教”大模型？解析参数高效微调与低秩适配技术。",
+    icon: Settings2,
+    color: "bg-cyan-50 text-cyan-600",
+  },
+  {
+    id: "slm-on-device",
+    title: "SLM 与端侧 AI",
+    description: "AI 正在“瘦身”进入手机：探索小语言模型与本地化 AI 的未来。",
+    icon: Smartphone,
+    color: "bg-lime-50 text-lime-600",
   },
 ];
 
